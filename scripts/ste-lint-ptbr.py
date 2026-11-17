@@ -283,7 +283,8 @@ SYNONYM_GROUPS = [
                       "conferia", "conferiam", "conferirá", "conferirão", "confira",
                       "confiram", "conferindo", "conferido", "conferida",
                       "conferidos", "conferidas"))),
-    (("apagar", verb("apag", "ar") + "|" + verb("apagu", "ar")),
+    # Só o uso transitivo ("apague o arquivo"): "o LED apagar" (desligar) não é sinônimo de remover.
+    (("apagar", "(?:" + verb("apag", "ar") + "|" + verb("apagu", "ar") + r")(?=\s+(?:o|a|os|as|esse|essa|este|esta|todos|todas)\b)"),
      ("excluir", verb("exclu", "ir")),
      ("remover", verb("remov", "er")),
      ("deletar", verb("delet", "ar"))),
@@ -671,6 +672,8 @@ SELFTEST_CASES = [
     ("rotacao-de-sinonimos", "O agente apaga o arquivo. Depois ele exclui a pasta.",
      "O agente apaga o arquivo. Depois ele apaga a pasta."),
     ("rotacao-de-sinonimos", "Use o comando. Utilize a opção.", "Use o comando. Use a opção."),
+    ("rotacao-de-sinonimos", "Apague o log. Depois remova a pasta.",
+     "Retire o módulo depois que o LED apagar. Remova a tampa."),
     ("ponto-de-milhar", "O limite é 1.500 registros.", "O limite é 1500 registros. Versão 1.2.3 em 10.0.0.1."),
 ]
 

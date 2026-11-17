@@ -3,7 +3,7 @@ name: asd-ste100-pt-br
 description: "Use quando um texto em português do Brasil precisa ser interpretado sem um humano para resolver ambiguidade — descrições de ferramentas, mensagens de erro, instruções entre agentes, prompts de sistema, procedimentos, manuais técnicos, textos de interface — e uma leitura errada tem custo real, ou quando o texto está denso, burocrático, cheio de ressalvas ou fácil de interpretar errado. Gatilhos: simplifique este texto, português técnico simplificado, STE em português, ASD-STE100 pt-BR, reescreva para um agente não interpretar errado, tire a ambiguidade, linguagem controlada, texto técnico claro, reescreva este manual/procedimento/erro, simplify this Portuguese. Não use para texto criativo ou de marketing, nem para texto em inglês."
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Português Técnico Simplificado (baseado na ASD-STE100)
@@ -109,6 +109,7 @@ Procure estes dez hábitos antes de reescrever qualquer coisa. Cada um é mecân
 4. Reescreva cada frase marcada e preserve o sentido com exatidão. Se a reescrita perder precisão necessária, mantenha a forma mais longa e sinalize. Precisão necessária inclui uma condição de segurança, um qualificador de escopo e um número.
    - **Prefira a forma natural que ainda é inequívoca.** Esta skill tira ambiguidade, não naturalidade. "Pode ter falhado" e "pode gerar artefatos parciais" são ressalvas claras: deixe assim. Reserve "talvez" para quando "pode" também leria como permissão. "Você pode ligar o equipamento sem a tampa apenas para teste" é permissão clara pelo contexto: não precisa virar "tem permissão para". Um texto que soa como tradução literal faz o leitor desconfiar do sentido.
    - **Verifique a modalidade antes de fechar a reescrita.** `pode`, `talvez`, `possivelmente`, `provavelmente`, `é possível que`, `às vezes`, e verbos de tentativa como `tenta` e `vai tentar` carregam a confiança do autor, e confiança é conteúdo. Conte as afirmações incertas na fonte. Mantenha uma ressalva para cada uma, mesmo quando dividir ou juntar frases. Uma frase mais curta que transforma ressalva em fato é uma afirmação diferente, não uma simplificação. Esse é o jeito mais comum de uma reescrita STE bem-intencionada dar errado, porque as ressalvas são exatamente o que um limite de tamanho tenta cortar.
+   - **Declare a leitura que você escolheu.** Às vezes a fonte tem duas leituras e o contexto não decide: `seu` com dois donos possíveis, `para` verbo ou preposição, `a mesma` com dois antecedentes. A reescrita precisa escolher uma, porque a meta é tirar a ambiguidade. Mas escolher em silêncio esconde uma decisão de negócio dentro de uma reescrita de forma. Escreva a leitura mais provável e registre a escolha na linha `Leitura escolhida:` (veja Formato de saída). Quando o contexto decide, não há o que declarar.
    - Nunca acrescente um fato que a fonte não afirmou. Uma reescrita que lê melhor porque inventou uma causa, uma frequência ou um mecanismo deixou de ser reescrita.
    - Mantenha a concordância de gênero e número correta depois de cada mudança. Quando trocar um pronome pelo substantivo, verifique o artigo e o adjetivo.
    - Mantenha a variante. Se a entrada está em português europeu (`ficheiro`, `ecrã`, `utilizador`, `estar a fazer`), diga isso e não misture variantes. Converta para pt-BR só se o usuário pedir.
@@ -120,7 +121,12 @@ Procure estes dez hábitos antes de reescrever qualquer coisa. Cada um é mecân
 
 **Padrão: o texto reescrito, e nada mais.** Quem chama esta skill quase sempre quer um resultado para colar direto em uma descrição de ferramenta, uma mensagem de erro ou um prompt. Sem preâmbulo, sem anúncio de modo, sem contagem de violações, sem resumo das mudanças, sem tabela de regras, sem oferta de explicar mais.
 
-Há uma única adição permitida. Se o passo 4 manteve uma forma mais longa de propósito, acrescente uma linha depois do texto, começando com `Mantido como está:`. Ela nomeia o trecho e a precisão que uma versão mais curta perderia. Não use essa linha para explicar uma ressalva mantida, uma regra aplicada ou uma ambiguidade notada. Omita a linha quando não há o que relatar.
+Há duas adições permitidas, depois do texto, uma linha cada:
+
+- `Mantido como está:` quando o passo 4 manteve uma forma mais longa de propósito. A linha nomeia o trecho e a precisão que uma versão mais curta perderia.
+- `Leitura escolhida:` quando a fonte tinha duas leituras e o contexto não decidia. A linha cita o trecho original e a leitura usada, por exemplo: `Leitura escolhida: "seu e-mail" = e-mail do solicitante. "para o serviço" = interrompe o serviço.` Assim quem colou o texto confirma a decisão antes de usá-lo.
+
+Não use essas linhas para explicar uma ressalva mantida ou uma regra aplicada. Omita cada linha quando não há o que relatar.
 
 **A pedido: a tabela de regras.** Exemplos de pedido: "mostre o diff", "quais regras ele quebrou", "explique as mudanças", "antes/depois", "mostre a tabela". Para esses pedidos, produza isto no lugar:
 
