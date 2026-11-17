@@ -51,13 +51,13 @@ A prosa deste repositório não passa limpa no linter: as tabelas de regras cita
 ## Instalação
 
 ```bash
-git clone https://github.com/Vlademir7/asd-ste100-pt_BR-skill ~/.claude/skills/asd-ste100-pt-br
+git clone https://github.com/vladesouza7/asd-ste100-pt_BR-skill ~/.claude/skills/asd-ste100-pt-br
 ```
 
 Ou, com a [skills CLI](https://skills.sh/):
 
 ```bash
-npx skills add Vlademir7/asd-ste100-pt_BR-skill
+npx skills add vladesouza7/asd-ste100-pt_BR-skill
 ```
 
 ## Uso
