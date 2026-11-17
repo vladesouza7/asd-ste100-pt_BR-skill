@@ -1,0 +1,11 @@
+{
+  "name": "asd-ste100-pt-br-marketplace",
+  "owner": { "name": "vladesouza7" },
+  "plugins": [
+    {
+      "name": "asd-ste100-pt-br",
+      "source": "./",
+      "description": "Português Técnico Simplificado: reescreve texto em pt-BR para que um agente ou um leitor não o interprete errado. Baseado na ASD-STE100."
+    }
+  ]
+}

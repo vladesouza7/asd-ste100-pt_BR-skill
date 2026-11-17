@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: ambiguidade-pronome-escopo-homografo
+expected_outcome: |
+  A resposta contém só o texto reescrito (mais, no máximo, uma linha "Mantido
+  como está:"). Cada ambiguidade do original é resolvida ou sinalizada, sem
+  inventar a regra de negócio: "seu e-mail" (do solicitante ou do analista?),
+  "só pode encerrar" (escopo de "só"), "o comando de rollback para o serviço"
+  ("para" verbo ou preposição?), "ele decide" (gestor ou agente?), "pode anexar
+  até 5 arquivos" (no máximo 5), "deve estar com a fila vazia" (requisito),
+  "a mesma será descartada" (a triagem ou a fila?). Onde a fonte não permite
+  decidir (quem é "ele", de quem é "seu", o que "a mesma" retoma, se "para" é
+  verbo), a resposta mantém a frase ou escolhe uma leitura e declara a escolha
+  na linha "Mantido como está:" ou equivalente, em vez de escolher em silêncio.
+  Sem "o mesmo/a mesma", sem "caso contrário", sem ponto e vírgula, frases com
+  no máximo 30 palavras.
