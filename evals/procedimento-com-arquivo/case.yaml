@@ -1,0 +1,18 @@
+schema_version: "1.1"
+name: procedimento-com-arquivo
+expected_outcome: |
+  O arquivo procedimento-ste.md existe e contém o procedimento como lista
+  numerada, com uma instrução por frase, todas no imperativo na forma "você"
+  (Desligue, Espere, Remova), sem "deve-se", "favor", "deverá" nem infinitivo
+  como instrução. As condições de segurança vêm antes da ação que elas
+  proíbem ("Se o LED estiver vermelho, não abra a tampa"). A ordem de
+  desconexão (cabo de sinal antes do conector principal) e de conexão (cabo
+  de sinal primeiro, depois conector principal) é preservada e explícita. Os
+  valores ficam: 4 parafusos, Torx T20, 1,2 N·m, 30 s, cerca de 5 minutos,
+  número de série do módulo antigo e do novo. A ressalva "ainda podem estar
+  carregados" e o aviso final (religar sem tampa só para teste, nunca em
+  operação) ficam. Não há abreviações (aprox., min., p/, qdo, nº, Obs.), nem
+  "(s)", nem ponto e vírgula, nem "o mesmo". O linter da skill não reporta
+  violações duras no arquivo final.
+context:
+  scaffold_script: place-files.sh

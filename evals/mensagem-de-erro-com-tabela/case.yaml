@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: mensagem-de-erro-com-tabela
+expected_outcome: |
+  A resposta traz uma tabela markdown com as colunas "Regra violada | Original |
+  Simplificado", uma linha por regra (nominalização, burocratês "em virtude de",
+  "junto à", "através de", "o(a) usuário(a)", passiva, frase longa, gerúndio
+  "sendo recomendável"), seguida de "Modo: Estrito. N violações encontradas." e
+  de uma linha sobre o que não foi simplificado. O texto final mantém as
+  ressalvas "pode ter ocorrido" / "pode ter sido" (não vira "a transação falhou"),
+  não inventa causa nem frequência, e termina com instruções no imperativo
+  (tente de novo, atualize o aplicativo).

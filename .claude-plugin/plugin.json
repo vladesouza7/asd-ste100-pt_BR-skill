@@ -1,0 +1,22 @@
+{
+  "name": "asd-ste100-pt-br",
+  "displayName": "Português Técnico Simplificado (ASD-STE100 pt-BR)",
+  "version": "0.1.0",
+  "description": "Reescreve texto em português do Brasil para que um agente de IA ou um leitor não o interprete errado. Adaptação da norma de linguagem controlada ASD-STE100.",
+  "author": {
+    "name": "Vlademir7",
+    "url": "https://github.com/Vlademir7"
+  },
+  "homepage": "https://github.com/Vlademir7/asd-ste100-pt_BR-skill",
+  "repository": "https://github.com/Vlademir7/asd-ste100-pt_BR-skill",
+  "license": "MIT",
+  "keywords": [
+    "portugues",
+    "pt-br",
+    "ste100",
+    "simplified-technical-english",
+    "linguagem-controlada",
+    "linguagem-simples",
+    "escrita-tecnica"
+  ]
+}
